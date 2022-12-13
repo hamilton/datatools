@@ -1,4 +1,4 @@
-import { nicelyPreciseNumber } from ".";
+import { justEnoughPrecision } from ".";
 
 interface TestCase {
   input: number;
@@ -71,14 +71,14 @@ let allTestCases = withNegativesToo([
   ...fours,
 ]);
 
-describe("nicelyPreciseNumber", () => {
+describe("justEnoughPrecision", () => {
   it("throws on non-numbers", () => {
-    expect(() => nicelyPreciseNumber("foo" as any)).toThrow();
-    expect(() => nicelyPreciseNumber(undefined as any)).toThrow();
+    expect(() => justEnoughPrecision("foo" as any)).toThrow();
+    expect(() => justEnoughPrecision(undefined as any)).toThrow();
   });
   it("returns formatted values, removing floating points depending on number of significant digits", () => {
     allTestCases.forEach(({ input, output }) => {
-      expect(nicelyPreciseNumber(input)).toBe(output);
+      expect(justEnoughPrecision(input)).toBe(output);
     });
   });
 });

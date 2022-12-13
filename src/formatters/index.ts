@@ -1,5 +1,5 @@
 /** This heuristic is courtesy Dominik Moritz */
-export function nicelyPreciseNumber(n: number) {
+export function justEnoughPrecision(n: number) {
   if (typeof n !== "number") throw Error("argument must be a number");
   const str = n.toString();
   // if there are no floating point digits, return the string
