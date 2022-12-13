@@ -53,6 +53,7 @@ const fours = [
   { input: 1234.12, output: "1234.1" },
 ];
 
+// add negative versions of all test cases
 const withNegativesToo = (testCases: TestCase[]) => [
   ...testCases,
   ...testCases.map(({ input, output }) => ({
